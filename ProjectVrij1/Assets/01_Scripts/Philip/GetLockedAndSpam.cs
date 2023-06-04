@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GetLockedAndSpam : MonoBehaviour
 {
@@ -8,6 +9,12 @@ public class GetLockedAndSpam : MonoBehaviour
 	private int spamAmount;
 	[SerializeField] private float spamTotal;
 	[SerializeField] private Animator animController;
+	[SerializeField] DoorScript doorScript;
+
+	private void Awake()
+	{
+		animController.enabled = false;
+	}
 
 	private void Update()
 	{
@@ -21,13 +28,23 @@ public class GetLockedAndSpam : MonoBehaviour
 
 		if (spamAmount >= spamTotal)
 		{
-			Debug.Log("succeed");
+			doorScript.EnableEverythingAgain();
+			animController.SetBool("Demon", false);
+			animController.enabled = false;
+			isSpammable = false;
+		}
+
+		AnimatorStateInfo stateInfo = animController.GetCurrentAnimatorStateInfo(0);
+		if (stateInfo.IsName("turnaround") && stateInfo.normalizedTime >= 1.0f)
+		{
+			SceneManager.LoadScene("Death");
 		}
 	}
 
 	public void EventDemon()
 	{
-		animController.SetBool("Demon", true);
+		animController.enabled = true;
 		isSpammable = true;
+		animController.SetBool("Demon", true);
 	}
 }

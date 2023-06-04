@@ -7,15 +7,14 @@ using Cinemachine;
 public class DoorScript : MonoBehaviour
 {
 	[SerializeField] private GameObject playerObj;
+	[SerializeField] private GameObject cameraPlacementPlayer;
 	[SerializeField] private GetLockedAndSpam lockAndSpam;
-	private CinemachineVirtualCamera cinemachineVirtualCamera;
+	[SerializeField] private CinemachineVirtualCamera cinemachineVirtualCamera;
 	private ThirdPersonController thirdPersonController;
 	private bool isColliding;
 
 	private void Awake()
 	{
-
-		cinemachineVirtualCamera = playerObj.GetComponent<CinemachineVirtualCamera>();
 		thirdPersonController = playerObj.GetComponent<ThirdPersonController>();
 		thirdPersonController.enabled = true;
 		isColliding = false;
@@ -36,7 +35,18 @@ public class DoorScript : MonoBehaviour
 		if (Input.GetKeyDown(KeyCode.Space) && isColliding)
 		{
 			thirdPersonController.enabled = false;
+			cinemachineVirtualCamera.Follow = null;
 			lockAndSpam.EventDemon();
 		}
+	}
+
+	public void EnableEverythingAgain()
+	{
+		CinemachineBasicMultiChannelPerlin noise = cinemachineVirtualCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
+		noise.m_FrequencyGain = 0.5f;
+
+		thirdPersonController.enabled = true;
+		cinemachineVirtualCamera.Follow = cameraPlacementPlayer.transform;
+		isColliding = false;
 	}
 }
