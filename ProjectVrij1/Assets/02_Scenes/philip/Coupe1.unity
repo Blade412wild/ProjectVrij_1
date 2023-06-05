@@ -1887,7 +1887,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh119938
+  m_Name: pb_Mesh141930
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -15838,10 +15838,10 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6784610532084842980}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.02, y: 0.052427296, z: 0.019999998}
+  m_Size: {x: 0.02, y: 0.38, z: 0.019999998}
   m_Center: {x: 0, y: 0.016213411, z: -7.200308e-18}
 --- !u!1 &6802497877111430014
 GameObject:
