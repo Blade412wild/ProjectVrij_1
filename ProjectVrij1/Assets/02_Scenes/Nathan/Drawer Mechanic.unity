@@ -384,6 +384,7 @@ MonoBehaviour:
   BoxActivationDistance: 2
   Speed: 10
   DistanceToWin: 0
+  Counter: 0
 --- !u!1 &602885663
 GameObject:
   m_ObjectHideFlags: 0
@@ -482,12 +483,14 @@ MonoBehaviour:
   Drawer2: {fileID: 1353241019}
   Drawer3: {fileID: 908818629}
   Drawer4: {fileID: 546124077}
-  Player: {fileID: 1443491515}
   Slide1: {fileID: 1217347696}
   Slide2: {fileID: 1246910864}
   Slide3: {fileID: 944518449}
   Slide4: {fileID: 1966152983}
   Slide5: {fileID: 900446337}
+  Player: {fileID: 1443491515}
+  MinCounter: 3
+  DayTime: 1
 --- !u!4 &675767859
 Transform:
   m_ObjectHideFlags: 0
@@ -885,6 +888,7 @@ MonoBehaviour:
   BoxActivationDistance: 2
   Speed: 0.5
   DistanceToWin: 0
+  Counter: 0
 --- !u!1 &944518449
 GameObject:
   m_ObjectHideFlags: 0
@@ -1853,6 +1857,7 @@ MonoBehaviour:
   BoxActivationDistance: 2
   Speed: 4.25
   DistanceToWin: 0
+  Counter: 0
 --- !u!1 &1363184912
 GameObject:
   m_ObjectHideFlags: 0
@@ -1968,6 +1973,7 @@ MonoBehaviour:
   BoxActivationDistance: 2
   Speed: 1.25
   DistanceToWin: 0
+  Counter: 0
 --- !u!1 &1376838495 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8944336655422409498, guid: f6d148d888ffbf54b9afe9936dfaec1f,
