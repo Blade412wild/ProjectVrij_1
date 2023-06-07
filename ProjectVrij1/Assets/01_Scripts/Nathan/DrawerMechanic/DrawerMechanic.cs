@@ -67,7 +67,7 @@ public class DrawerMechanic : MonoBehaviour
         if (managerDrawer.DayTime == true)
         {
 
-            if(Speed == 0)
+            if(Speed == 0 && Counter < 3)
             {
                 Speed = InitialSpeed;
             }
@@ -97,6 +97,11 @@ public class DrawerMechanic : MonoBehaviour
 
             if (boxSize.x > boxSize.z)
             {
+                if(transform.position.x > PlayerBeginPosX)
+                {
+                    Speed = InitialSpeed * -1;
+                }
+
                 if (transform.position.x <= PlayerBeginPosX)
                 {
                     Speed = 0;
@@ -105,6 +110,11 @@ public class DrawerMechanic : MonoBehaviour
 
             if (boxSize.x < boxSize.z)
             {
+                if (transform.position.z > PlayerBeginPosX)
+                {
+                    Speed = InitialSpeed * -1;
+                }
+
                 if (transform.position.z <= PlayerBeginPosZ)
                 {
                     Speed = 0;
