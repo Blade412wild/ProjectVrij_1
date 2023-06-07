@@ -12,11 +12,20 @@ public class SelectionManager : MonoBehaviour
         if (Physics.Raycast(ray, out hit))
         {
             var selection = hit.transform;
-            var selectionItem = selection.GetComponent<Item>();
-            if(selectionItem != null)
+            var selectionItem = selection.GetComponent<DrawerMechanic>();
+            //var selectionItem = selection.
+            Debug.Log("er is een hit");
+
+            if(Input.GetKeyDown(KeyCode.G))
             {
-                selectionItem.RayIntersection = true;
+                if (selectionItem != null)
+                {
+                    Debug.Log("is niet null");
+                    selectionItem.Speed = 0;
+                }
             }
         }
+ 
     }
+
 }
