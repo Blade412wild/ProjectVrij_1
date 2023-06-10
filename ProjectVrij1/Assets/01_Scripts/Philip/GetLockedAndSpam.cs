@@ -9,6 +9,8 @@ public class GetLockedAndSpam : MonoBehaviour
 	private int spamAmount;
 	[SerializeField] private float spamTotal;
 	[SerializeField] private Animator animController;
+	[SerializeField] private Animator animControllerDemon;
+	[SerializeField] private Animator animControllerModel;
 	[SerializeField] DoorScript doorScript;
 
 	private void Awake()
@@ -24,6 +26,10 @@ public class GetLockedAndSpam : MonoBehaviour
 			{
 				spamAmount++;
 			}
+
+			animControllerModel.SetInteger("Demon", 1);
+
+
 		}	
 
 		if (spamAmount >= spamTotal)
@@ -46,5 +52,6 @@ public class GetLockedAndSpam : MonoBehaviour
 		animController.enabled = true;
 		isSpammable = true;
 		animController.SetBool("Demon", true);
+		animControllerDemon.SetBool("Demon", true);
 	}
 }

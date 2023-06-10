@@ -15,6 +15,7 @@ public class Demon : MonoBehaviour
     [SerializeField] private float CooldownTimer;
     [SerializeField] private float CooldownStartTime;
     [SerializeField] private LayerMask playerLayerMask;
+    private Animator anim;
 
     [Header("NavMeshAgent")]
     [SerializeField] private NavMeshAgent NavMeshAgent;
@@ -29,6 +30,7 @@ public class Demon : MonoBehaviour
     private void Awake()
     {
         NavMeshAgent = GetComponent<NavMeshAgent>();
+        anim = transform.GetChild(0).GetComponent<Animator>();
 
         if (raycastOrigin == null)
         {
@@ -65,6 +67,7 @@ public class Demon : MonoBehaviour
 
     private void IdleBehaviour()
     {
+        anim.SetInteger("Demon", 0);
         RaycastHit hit;
         if (Physics.Raycast(raycastOrigin.position, raycastOrigin.forward, out hit, ViewDistance, playerLayerMask))
         {
@@ -86,6 +89,7 @@ public class Demon : MonoBehaviour
 
     private void PatrolBehaviour()
     {
+        anim.SetInteger("Demon", 1);
         if (NavMeshAgent.remainingDistance <= NavMeshAgent.stoppingDistance)
         {
             patrolIndex++;
@@ -114,6 +118,7 @@ public class Demon : MonoBehaviour
 
     private void AttackBehaviour()
     {
+        anim.SetInteger("Demon", 0);
         float distanceToPlayer = Vector3.Distance(transform.position, Player.transform.position);
 
         if (distanceToPlayer < closeDistanceThreshold)

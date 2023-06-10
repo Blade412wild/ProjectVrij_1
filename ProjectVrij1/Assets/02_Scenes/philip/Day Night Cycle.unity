@@ -1168,7 +1168,7 @@ MonoBehaviour:
   anim: {fileID: 1152392469}
   demon: {fileID: 1470086957}
   demonScript: {fileID: 1470086959}
-  DayOrNight: 0
+  DayOrNight: 1
 --- !u!114 &1188999177 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3632805941122824673, guid: 47fdd46f59f41c049ab89a4880edb615,
