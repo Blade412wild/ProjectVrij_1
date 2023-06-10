@@ -29,9 +29,15 @@ public class DayNightCycle : MonoBehaviour
 		if (!DayOrNight)
 		{
 			anim.SetInteger("DNC", 0);
-			demonScript.enabled = true;
-			demon.SetActive(true);
+			StartCoroutine(ShowDemon());
 		}
+	}
+
+	IEnumerator ShowDemon()
+	{
+		yield return new WaitForSeconds(2);
+		demonScript.enabled = true;
+		demon.SetActive(true);
 	}
 
 
