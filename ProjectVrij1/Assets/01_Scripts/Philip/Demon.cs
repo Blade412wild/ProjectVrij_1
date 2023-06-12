@@ -15,7 +15,7 @@ public class Demon : MonoBehaviour
     [SerializeField] private float CooldownTimer;
     [SerializeField] private float CooldownStartTime;
     [SerializeField] private LayerMask playerLayerMask;
-    private Animator anim;
+    [SerializeField] private Animator anim;
 
     [Header("NavMeshAgent")]
     [SerializeField] private NavMeshAgent NavMeshAgent;
@@ -30,7 +30,6 @@ public class Demon : MonoBehaviour
     private void Awake()
     {
         NavMeshAgent = GetComponent<NavMeshAgent>();
-        anim = transform.GetChild(0).GetComponent<Animator>();
 
         if (raycastOrigin == null)
         {
