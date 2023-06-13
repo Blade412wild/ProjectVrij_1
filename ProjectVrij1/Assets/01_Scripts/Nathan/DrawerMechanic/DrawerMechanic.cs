@@ -251,7 +251,7 @@ public class DrawerMechanic : MonoBehaviour
     {
         bool _state;
         float _playerObjectDistance = Vector3.Distance(transform.position, managerDrawer.Player.transform.position);
-        Debug.Log(_playerObjectDistance);
+        //Debug.Log(_playerObjectDistance);
 
         if(_playerObjectDistance < BoxActivationDistance && Speed > 0 || _playerObjectDistance < BoxActivationDistance && Speed < 0)
         {
