@@ -33,7 +33,6 @@ public class HideInBed : MonoBehaviour
     void Update()
     {
         PlayerSafeSatus = IsPlayerSafe();
-        Debug.Log(PlayerSafeSatus);
         movemend();
 
     }
