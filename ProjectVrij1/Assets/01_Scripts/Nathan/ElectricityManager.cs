@@ -4,16 +4,17 @@ using UnityEngine;
 
 public class ElectricityManager : MonoBehaviour
 {
+    [Header("miscellaneous")]
     public GameObject ElectricityPrefab;
     public EndMarker endMarker;
+    public  bool FinishedMiniGame;
+
     private Vector3 playerSpawnPos;
     private ElectricityTest ElectricityMoveScript; 
     private  ElectricityCollission collissionScript;
     
 
-   public  bool FinishedMiniGame;
-    bool IsCollission;
-
+    private bool IsCollission;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,13 +23,15 @@ public class ElectricityManager : MonoBehaviour
         ElectricityMoveScript = ElectricityPrefab.GetComponent<ElectricityTest>();
         collissionScript = ElectricityPrefab.GetComponent<ElectricityCollission>();
 
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        IsCollission= checkFOrCollossion();
-        if(IsCollission == true)
+        IsCollission = checkFOrCollossion();
+
+        if (IsCollission == true)
         {
             ElectricityMoveScript.BeginState = true;
             ElectricityMoveScript.SpeedY = ElectricityMoveScript.BeginSpeed;
@@ -36,10 +39,12 @@ public class ElectricityManager : MonoBehaviour
             Debug.Log(ElectricityMoveScript.BeginState);
         }
 
-        if (endMarker.DidWin)
+        if (endMarker.DidWin == true)
         {
             FinishedMiniGame = true;
         }
+
+
     }
 
     bool checkFOrCollossion()
@@ -48,4 +53,5 @@ public class ElectricityManager : MonoBehaviour
         return collissionScript.IsCollission;
         
     }
+
 }
