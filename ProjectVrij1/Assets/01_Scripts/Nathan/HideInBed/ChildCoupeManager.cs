@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ChildCoupeManager : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class ChildCoupeManager : MonoBehaviour
 
     [Header("miscellaneous")]
     public bool IsDay;
+    public SceneLoader sceneLoader;
 
 
 
@@ -34,6 +36,11 @@ public class ChildCoupeManager : MonoBehaviour
             drawerManager.Player.SetActive(true);
             cameraManager.CameraBed.SetActive(false);
         }
-        Debug.Log(playerInputManager.InBed);
+
+        if(sceneLoader.LoadThirdScene == true)
+        {
+            SceneManager.LoadScene("");
+
+        }
     }
 }
