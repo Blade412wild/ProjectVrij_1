@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class HideInBed : MonoBehaviour
 {
+    public ChildCoupeManager childCoupeManager;
     public RectTransform Blakets;
 
     public float maxPosY;
@@ -38,7 +39,7 @@ public class HideInBed : MonoBehaviour
     }
     private void movemend()
     {
-        if (Input.GetKeyDown(KeyCode.R))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             Debug.Log("press button");
             goingUp = true;
@@ -47,7 +48,7 @@ public class HideInBed : MonoBehaviour
                 Speed = Speed * -1;
             }
         }
-        if (Input.GetKey(KeyCode.R) && goingUp == true)
+        if (Input.GetKey(KeyCode.Space))
         {
             if (currentPosY < maxPosY)
             {
@@ -60,7 +61,7 @@ public class HideInBed : MonoBehaviour
 
         }
 
-        if (Input.GetKeyUp(KeyCode.R))
+        if (Input.GetKeyUp(KeyCode.Space))
         {
             Debug.Log("release Button");
             Speed = Speed * -1;

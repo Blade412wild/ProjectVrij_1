@@ -1120,7 +1120,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &790066328
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1630,6 +1630,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 913cd57ba774bbb468fe86f92c03d2ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  electricityManager: {fileID: 372126902}
   canvas: {fileID: 790066327}
   clip1: {fileID: 2013604107}
 --- !u!4 &1121725779

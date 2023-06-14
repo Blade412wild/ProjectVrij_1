@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerInputManager : MonoBehaviour
 {
     public bool InBed;
+    public bool SpacebarBed;
     // Start is called before the first frame update
 
     void Start()
@@ -23,6 +24,21 @@ public class PlayerInputManager : MonoBehaviour
             if (Physics.Raycast(ray, out hit))
             {
 
+            }
+        }
+
+        if (Input.GetKey(KeyCode.Space))
+        {
+            var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+
+            if (Physics.Raycast(ray, out hit))
+            {
+
+                if (InBed == true)
+                {
+                    SpacebarBed = true;
+                }
 
             }
         }
