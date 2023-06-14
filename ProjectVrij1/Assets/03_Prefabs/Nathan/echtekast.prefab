@@ -840,7 +840,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   managerDrawer: {fileID: 0}
   BoxActivationDistance: 2
-  Speed: 6
+  Speed: 1.75
   DistanceToWin: 0
   Counter: 0
 --- !u!65 &6441526249030118001
@@ -1255,7 +1255,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   managerDrawer: {fileID: 0}
   BoxActivationDistance: 2
-  Speed: 6
+  Speed: 4
   DistanceToWin: 0
   Counter: 0
 --- !u!65 &6441526249436596062

@@ -8,6 +8,7 @@ public class ElectricityTest : MonoBehaviour
     public float SpeedY = -4.0f;
     public float SpeedX = 1.0f;
     public  float BeginSpeed;
+    public AudioSource electricitySound;
 
 
     public  bool BeginState;
