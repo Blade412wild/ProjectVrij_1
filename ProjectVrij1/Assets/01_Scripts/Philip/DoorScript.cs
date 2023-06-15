@@ -13,9 +13,12 @@ public class DoorScript : MonoBehaviour
 	private ThirdPersonController thirdPersonController;
 	private bool isColliding;
 
+	public bool DemonAnimationHasBeenPlayed;
+
 	private void Awake()
 	{
-		thirdPersonController = playerObj.GetComponent<ThirdPersonController>();
+		DemonAnimationHasBeenPlayed = false;
+        thirdPersonController = playerObj.GetComponent<ThirdPersonController>();
 		thirdPersonController.enabled = true;
 		isColliding = false;
 	}
@@ -37,7 +40,8 @@ public class DoorScript : MonoBehaviour
 			thirdPersonController.enabled = false;
 			cinemachineVirtualCamera.Follow = null;
 			lockAndSpam.EventDemon();
-		}
+
+        }
 	}
 
 	public void EnableEverythingAgain()
@@ -48,5 +52,7 @@ public class DoorScript : MonoBehaviour
 		thirdPersonController.enabled = true;
 		cinemachineVirtualCamera.Follow = cameraPlacementPlayer.transform;
 		isColliding = false;
-	}
+        DemonAnimationHasBeenPlayed = true;
+
+    }
 }

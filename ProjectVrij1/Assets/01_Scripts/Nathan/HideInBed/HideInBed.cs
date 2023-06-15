@@ -39,7 +39,7 @@ public class HideInBed : MonoBehaviour
     }
     private void movemend()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && childCoupeManager.CanvasActive == true)
         {
             Debug.Log("press button");
             goingUp = true;
@@ -48,7 +48,7 @@ public class HideInBed : MonoBehaviour
                 Speed = Speed * -1;
             }
         }
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetKey(KeyCode.Space) && childCoupeManager.CanvasActive == true)
         {
             if (currentPosY < maxPosY)
             {
@@ -61,7 +61,7 @@ public class HideInBed : MonoBehaviour
 
         }
 
-        if (Input.GetKeyUp(KeyCode.Space))
+        if (Input.GetKeyUp(KeyCode.Space) && childCoupeManager.CanvasActive == true)
         {
             Debug.Log("release Button");
             Speed = Speed * -1;
@@ -77,6 +77,8 @@ public class HideInBed : MonoBehaviour
             Blakets.transform.position = new Vector3(Blakets.position.x, currentPosY, Blakets.position.z);
 
         }
+
+ 
     }
 
     private bool IsPlayerSafe()
