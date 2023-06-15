@@ -31,6 +31,7 @@ public class GetLockedAndSpam : MonoBehaviour
 
 			DemonObj.SetActive(true);
 			animControllerModel.SetInteger("Demon", 1);
+			animControllerDemon.SetBool("Demon", true);
 
 		}	
 
