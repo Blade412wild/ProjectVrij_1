@@ -8,6 +8,7 @@ public class ElectricityTest : MonoBehaviour
     public float SpeedY = -4.0f;
     public float SpeedX = 1.0f;
     public  float BeginSpeed;
+    public AudioSource electricitySound;
 
 
     public  bool BeginState;
@@ -31,19 +32,19 @@ public class ElectricityTest : MonoBehaviour
     {
         if (BeginState)
         {
-            if (Input.GetKeyDown(KeyCode.F))
+            if (Input.GetKeyDown(KeyCode.Space))
             {
                 BeginState = false;
             }
         }
         else
         {
-            if (Input.GetKeyDown(KeyCode.F) && SpeedY < 0)
+            if (Input.GetKeyDown(KeyCode.Space) && SpeedY < 0)
             {
                 SpeedY = SpeedY * -1;
             }
 
-            if (Input.GetKey(KeyCode.F))
+            if (Input.GetKey(KeyCode.Space))
             {
                 playerPos = new Vector3(transform.position.x + SpeedX * Time.deltaTime, transform.position.y + SpeedY * Time.deltaTime, transform.position.z /*- SpeedX * Time.deltaTime*/);
                 transform.position = playerPos;
@@ -55,7 +56,7 @@ public class ElectricityTest : MonoBehaviour
 
             }
 
-            if (Input.GetKeyUp(KeyCode.F) && SpeedY > 0)
+            if (Input.GetKeyUp(KeyCode.Space) && SpeedY > 0)
             {
                 SpeedY = SpeedY * -1;
             }

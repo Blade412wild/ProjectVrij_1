@@ -974,7 +974,7 @@ GameObject:
   - component: {fileID: 602677057}
   - component: {fileID: 602677056}
   m_Layer: 0
-  m_Name: ManagerDrawer (1)
+  m_Name: ManagerDrawer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -998,6 +998,11 @@ MonoBehaviour:
   Slide1: {fileID: 1413054454}
   Slide2: {fileID: 118705931}
   Slide3: {fileID: 528826906}
+  levelBoundaryTrigger: {fileID: 1512043832}
+  CageWall1: {fileID: 1987697596}
+  CageWall2: {fileID: 2044291363}
+  CageWall3: {fileID: 1508614542}
+  CageWall4: {fileID: 1483610229}
   Player: {fileID: 1443491515}
   MinCounter: 2
   DayTime: 1
@@ -1200,6 +1205,11 @@ MonoBehaviour:
   Slide1: {fileID: 1217347696}
   Slide2: {fileID: 1246910864}
   Slide3: {fileID: 944518449}
+  levelBoundaryTrigger: {fileID: 0}
+  CageWall1: {fileID: 0}
+  CageWall2: {fileID: 0}
+  CageWall3: {fileID: 0}
+  CageWall4: {fileID: 0}
   Player: {fileID: 1443491515}
   MinCounter: 2
   DayTime: 1
@@ -2561,7 +2571,6 @@ Transform:
   - {fileID: 899625275}
   - {fileID: 47355718}
   - {fileID: 1003620818}
-  - {fileID: 1512043831}
   - {fileID: 1593624759}
   m_Father: {fileID: 0}
   m_RootOrder: 11
@@ -3428,12 +3437,12 @@ GameObject:
   - component: {fileID: 1483610232}
   - component: {fileID: 1483610231}
   m_Layer: 0
-  m_Name: CageWall
+  m_Name: CageWall 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1483610230
 Transform:
   m_ObjectHideFlags: 0
@@ -3447,7 +3456,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1593624759}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1483610231
 BoxCollider:
@@ -3525,12 +3534,12 @@ GameObject:
   - component: {fileID: 1508614545}
   - component: {fileID: 1508614544}
   m_Layer: 0
-  m_Name: CageWall
+  m_Name: CageWall 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1508614543
 Transform:
   m_ObjectHideFlags: 0
@@ -3544,7 +3553,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1593624759}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1508614544
 BoxCollider:
@@ -3641,8 +3650,8 @@ Transform:
   m_LocalScale: {x: 0.85554403, y: 0.5669, z: 0.56689996}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1035433909}
-  m_RootOrder: 4
+  m_Father: {fileID: 1593624759}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1512043832
 MonoBehaviour:
@@ -3729,6 +3738,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1593624759}
+  - component: {fileID: 1593624760}
   m_Layer: 0
   m_Name: Cage
   m_TagString: Untagged
@@ -3748,13 +3758,27 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1512043831}
   - {fileID: 1987697597}
   - {fileID: 2044291364}
   - {fileID: 1508614543}
   - {fileID: 1483610230}
   m_Father: {fileID: 1035433909}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1593624760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1593624758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1924ff6505545e74581ed534c0378c4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnTheDrawer: 0
 --- !u!1 &1658491411
 GameObject:
   m_ObjectHideFlags: 0
@@ -4517,12 +4541,12 @@ GameObject:
   - component: {fileID: 1987697599}
   - component: {fileID: 1987697598}
   m_Layer: 0
-  m_Name: CageWall
+  m_Name: CageWall 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1987697597
 Transform:
   m_ObjectHideFlags: 0
@@ -4536,7 +4560,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1593624759}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1987697598
 BoxCollider:
@@ -4685,6 +4709,37 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f0271df749728104eac22c3d897fd8ce, type: 3}
+--- !u!1 &2008829735
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2008829736}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2008829736
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2008829735}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.20492458, y: 2.0634582, z: 0.6182869}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2016996880
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4824,12 +4879,12 @@ GameObject:
   - component: {fileID: 2044291366}
   - component: {fileID: 2044291365}
   m_Layer: 0
-  m_Name: CageWall
+  m_Name: CageWall 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2044291364
 Transform:
   m_ObjectHideFlags: 0
@@ -4843,7 +4898,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1593624759}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &2044291365
 BoxCollider:

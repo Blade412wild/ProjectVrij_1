@@ -12,7 +12,7 @@ public class DrawerMechanic : MonoBehaviour
 
     [Header("miscellaneous")]
     public float BoxActivationDistance = 2.0f;
-    public float Speed = 6f;
+    public float Speed;
     public float DistanceToWin;
     public int Counter;
 
