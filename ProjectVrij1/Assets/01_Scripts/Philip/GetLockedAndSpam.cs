@@ -9,10 +9,13 @@ public class GetLockedAndSpam : MonoBehaviour
 	private int spamAmount;
 	[SerializeField] private float spamTotal;
 	[SerializeField] private GameObject DemonObj;
+	[SerializeField] private GameObject cameraRoot;
 	[SerializeField] private Animator animController;
 	[SerializeField] private Animator animControllerDemon;
 	[SerializeField] private Animator animControllerModel;
+	[SerializeField] private string stringScne;
 	[SerializeField] DoorScript doorScript;
+	[SerializeField] private Animator volumeanim;
 
 	private void Awake()
 	{
@@ -30,6 +33,7 @@ public class GetLockedAndSpam : MonoBehaviour
 			}
 
 			DemonObj.SetActive(true);
+			volumeanim.SetBool("Demon", true);
 			animControllerModel.SetInteger("Demon", 1);
 			animControllerDemon.SetBool("Demon", true);
 
@@ -39,14 +43,23 @@ public class GetLockedAndSpam : MonoBehaviour
 		{
 			doorScript.EnableEverythingAgain();
 			animController.SetBool("Demon", false);
+			DemonObj.SetActive(false);
+			volumeanim.SetBool("Demon", false);
+
+
 			animController.enabled = false;
 			isSpammable = false;
+
+
+			Vector3 currentPosition = cameraRoot.transform.position;
+			Vector3 newPosition = new Vector3(currentPosition.x, 2.5f, currentPosition.z);
+			cameraRoot.transform.position = newPosition;
 		}
 
 		AnimatorStateInfo stateInfo = animController.GetCurrentAnimatorStateInfo(0);
 		if (stateInfo.IsName("turnaround") && stateInfo.normalizedTime >= 1.0f)
 		{
-			SceneManager.LoadScene("Death");
+			SceneManager.LoadScene(stringScne);
 		}
 	}
 

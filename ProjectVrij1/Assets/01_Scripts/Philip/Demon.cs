@@ -68,7 +68,8 @@ public class Demon : MonoBehaviour
     {
         anim.SetInteger("Demon", 0);
         RaycastHit hit;
-        if (Physics.Raycast(raycastOrigin.position, raycastOrigin.forward, out hit, ViewDistance, playerLayerMask))
+        Vector3 raycastDirection = (Vector3.down + raycastOrigin.forward).normalized;
+        if (Physics.Raycast(raycastOrigin.position, raycastDirection, out hit, ViewDistance, playerLayerMask))
         {
             if (hit.collider.gameObject.CompareTag("Player"))
             {
@@ -104,7 +105,8 @@ public class Demon : MonoBehaviour
         }
 
         RaycastHit hit;
-        if (Physics.Raycast(raycastOrigin.position, raycastOrigin.forward, out hit, ViewDistance, playerLayerMask))
+        Vector3 raycastDirection = (Vector3.down + raycastOrigin.forward).normalized;
+        if (Physics.Raycast(raycastOrigin.position, raycastDirection, out hit, ViewDistance, playerLayerMask))
         {
             if (hit.collider.gameObject.CompareTag("Player"))
             {
@@ -128,7 +130,6 @@ public class Demon : MonoBehaviour
 
         Debug.Log(" attack ");
         NavMeshAgent.SetDestination(Player.transform.position);
-        //NavMeshAgent.transform.rotation = Quaternion.LookRotation((Player.transform.position - transform.position).normalized);
 
         Vector3 directionToPlayer = Player.transform.position - transform.position;
         directionToPlayer.y = 0;
