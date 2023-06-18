@@ -10,6 +10,7 @@ public class DoorScript : MonoBehaviour
 	[SerializeField] private GameObject cameraPlacementPlayer;
 	[SerializeField] private GetLockedAndSpam lockAndSpam;
 	[SerializeField] private CinemachineVirtualCamera cinemachineVirtualCamera;
+	[SerializeField] private AudioManager auditman;
 	private ThirdPersonController thirdPersonController;
 	private bool isColliding;
 
@@ -17,6 +18,7 @@ public class DoorScript : MonoBehaviour
 
 	private void Awake()
 	{
+		auditman.PlayAudio(0);
 		DemonAnimationHasBeenPlayed = false;
         thirdPersonController = playerObj.GetComponent<ThirdPersonController>();
 		thirdPersonController.enabled = true;
@@ -40,8 +42,8 @@ public class DoorScript : MonoBehaviour
 			thirdPersonController.enabled = false;
 			cinemachineVirtualCamera.Follow = null;
 			lockAndSpam.EventDemon();
-
-        }
+			auditman.PlayAudio(1);
+		}
 	}
 
 	public void EnableEverythingAgain()
