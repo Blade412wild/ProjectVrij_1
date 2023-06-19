@@ -35,6 +35,7 @@ public class DoorScript : MonoBehaviour
     {
         if (PlayAnimation == true && !DemonAnimationHasBeenPlayed)
         {
+            DemonAnimationHasBeenPlayed = true;
             thirdPersonController.enabled = false;
             cinemachineVirtualCamera.Follow = null;
             lockAndSpam.EventDemon();
@@ -44,13 +45,12 @@ public class DoorScript : MonoBehaviour
 
     public void EnableEverythingAgain()
     {
+        auditman.PlayAudio(0);
         CinemachineBasicMultiChannelPerlin noise = cinemachineVirtualCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
         noise.m_FrequencyGain = 0.5f;
 
         thirdPersonController.enabled = true;
         cinemachineVirtualCamera.Follow = cameraPlacementPlayer.transform;
-        isColliding = false;
-        DemonAnimationHasBeenPlayed = true;
         uiInput.DemonAnimationIsActive = false;
     }
 }

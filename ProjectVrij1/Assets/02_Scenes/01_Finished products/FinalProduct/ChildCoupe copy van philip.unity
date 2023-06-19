@@ -1493,11 +1493,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 391263265}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b033a05721977ae499a5ba60e00bc7cd, type: 3}
+  m_Script: {fileID: 11500000, guid: 267205378c5c45441afb337376280e71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dayDuration: 30
-  nightDuration: 50
+  dayDuration: 10
+  nightDuration: 5
   dayNightCycle: {fileID: 1559997121}
   audioManager: {fileID: 850381718}
 --- !u!1 &443751764
@@ -5133,6 +5133,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   InBed: 0
   SpacebarBed: 0
+  uiInput: {fileID: 0}
 --- !u!4 &1798638773
 Transform:
   m_ObjectHideFlags: 0

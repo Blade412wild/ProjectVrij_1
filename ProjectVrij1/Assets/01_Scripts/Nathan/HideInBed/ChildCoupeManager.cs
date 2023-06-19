@@ -16,8 +16,6 @@ public class ChildCoupeManager : MonoBehaviour
     public bool CanvasActive;
 
 
-
-
     // Start is called before the first frame update
     void Start()
     {
@@ -47,7 +45,6 @@ public class ChildCoupeManager : MonoBehaviour
         if(sceneLoader.LoadThirdScene == true)
         {
             SceneManager.LoadScene("ElectricityGame");
-
         }
     }
 }

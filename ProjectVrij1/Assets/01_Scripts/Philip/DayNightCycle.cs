@@ -14,6 +14,7 @@ public class DayNightCycle : MonoBehaviour
 		DayOrNight = true;
 		demonScript.enabled = false;
 		demon.SetActive(false);
+
 	}
 
 	private void Update()
@@ -31,6 +32,11 @@ public class DayNightCycle : MonoBehaviour
 			anim.SetInteger("DNC", 0);
 			StartCoroutine(ShowDemon());
 		}
+	}
+
+	public void SetDayOrNight(bool _index)
+	{
+		DayOrNight = _index;
 	}
 
 	IEnumerator ShowDemon()
