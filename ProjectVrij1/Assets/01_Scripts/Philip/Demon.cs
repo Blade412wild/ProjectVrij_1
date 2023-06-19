@@ -8,39 +8,27 @@ public class Demon : MonoBehaviour
 {
     private enum StateEnum { Idle, Patrol, Attack }
     [SerializeField] private StateEnum currentState;
-	[SerializeField] private float ViewDistance = 5;
-    [SerializeField] private float rayThreshold = 1.0f;
+    [SerializeField] private float ViewDistance = 5;
     [SerializeField] private float closeDistanceThreshold = 2.0f;
     [SerializeField] private string sceneToLoad = "GameOverScene";
     [SerializeField] private float CooldownTimer;
     [SerializeField] private float CooldownStartTime;
     [SerializeField] private LayerMask playerLayerMask;
     [SerializeField] private Animator anim;
+    [SerializeField] private HideInBed hidinBed;
 
     [Header("NavMeshAgent")]
     [SerializeField] private NavMeshAgent NavMeshAgent;
     public PatrolPoints[] PatrolPoints;
-    [SerializeField] private Transform raycastOrigin;
     [SerializeField] private int patrolIndex = 0;
 
     [Header("Reference Object")]
     [SerializeField] private GameObject Player;
-    [SerializeField] private UIInput uiInput;
-
     //[SerializeField] private AdultToChildMode adultToChildMode;
 
     private void Awake()
     {
         NavMeshAgent = GetComponent<NavMeshAgent>();
-
-        if (raycastOrigin == null)
-        {
-            // Create a new GameObject as the raycast origin if not assigned
-            raycastOrigin = new GameObject("RaycastOrigin").transform;
-            raycastOrigin.SetParent(transform);
-            raycastOrigin.localPosition = Vector3.zero;
-            raycastOrigin.localRotation = Quaternion.identity;
-        }
     }
 
     private void Start()
@@ -69,17 +57,10 @@ public class Demon : MonoBehaviour
     private void IdleBehaviour()
     {
         anim.SetInteger("Demon", 0);
-        RaycastHit hit;
-        Vector3 raycastDirection = (Vector3.down + raycastOrigin.forward).normalized;
-        if (Physics.Raycast(raycastOrigin.position, raycastDirection, out hit, ViewDistance, playerLayerMask))
+        if (Vector2.Distance(transform.position, Player.transform.position) <= ViewDistance && hidinBed.PlayerSafeSatus == false)
         {
-            if (hit.collider.gameObject.CompareTag("Player"))
-            {
-                currentState = StateEnum.Attack;
-            }
+            currentState = StateEnum.Attack;
         }
-
-        Debug.DrawRay(raycastOrigin.position, raycastOrigin.forward * ViewDistance, Color.red);
 
         CooldownTimer -= Time.deltaTime;
         if (CooldownTimer <= 0)
@@ -106,22 +87,20 @@ public class Demon : MonoBehaviour
             }
         }
 
-        RaycastHit hit;
-        Vector3 raycastDirection = (Vector3.down + raycastOrigin.forward).normalized;
-        if (Physics.Raycast(raycastOrigin.position, raycastDirection, out hit, ViewDistance, playerLayerMask))
+        if (Vector2.Distance(transform.position, Player.transform.position) <= ViewDistance && hidinBed.PlayerSafeSatus == false)
         {
-            if (hit.collider.gameObject.CompareTag("Player"))
-            {
-                currentState = StateEnum.Attack;
-            }
+            currentState = StateEnum.Attack;
         }
-
-        Debug.DrawRay(raycastOrigin.position, raycastOrigin.forward * ViewDistance, Color.red);
     }
 
     private void AttackBehaviour()
     {
-        anim.SetInteger("Demon", 0);
+        if (hidinBed.PlayerSafeSatus == true)
+		{
+            currentState = StateEnum.Patrol;
+		}
+
+        anim.SetInteger("Demon", 1);
         float distanceToPlayer = Vector3.Distance(transform.position, Player.transform.position);
 
         if (distanceToPlayer < closeDistanceThreshold)
@@ -130,7 +109,6 @@ public class Demon : MonoBehaviour
             return;
         }
 
-        Debug.Log(" attack ");
         NavMeshAgent.SetDestination(Player.transform.position);
 
         Vector3 directionToPlayer = Player.transform.position - transform.position;
@@ -138,10 +116,7 @@ public class Demon : MonoBehaviour
         Quaternion targetRotation = Quaternion.LookRotation(directionToPlayer);
         NavMeshAgent.transform.rotation = Quaternion.Euler(0, targetRotation.eulerAngles.y, 0);
 
-        // Nathan heeft toegevoegd
-        uiInput.demonAttackStateIsActive = true;
-
-        if (distanceToPlayer > ViewDistance * 2)
+        if (distanceToPlayer > ViewDistance)
         {
             currentState = StateEnum.Patrol;
         }
