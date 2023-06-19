@@ -19,28 +19,36 @@ public class VideoPlayerManager : MonoBehaviour
 
     // Start is called before the first frame update
     void Start()
-    {
-        currentTime = beginTime;
+    {        
+        //canvas.SetActive(false);
+        //currentTime = beginTime;
         //clipDuration = (float)clip1.length;
     }
 
     // Update is called once per frame
     void Update()
     {
-        newTime = currentTime  + (speed *Time.deltaTime);
-        currentTime = newTime;
+        //newTime = currentTime + (speed * Time.deltaTime);
+        //currentTime = newTime;
 
-        if(currentTime >= clipDuration)
-        {
-            clip1.Stop();
-            canvas.SetActive(false);
-        }
+        //if (currentTime >= clipDuration)
+        //{
+        //    clip1.Stop();
+        //    //canvas.SetActive(false);
+        //}
 
-        if(electricityManager.FinishedMiniGame == true)
+        if (electricityManager.FinishedMiniGame == true)
         {
+            electricityManager.FinishedMiniGame = true;
+            canvas.SetActive(true);
             clip1.Play();
         }
 
-        Debug.Log(currentTime);
+        //if(Input.GetMouseButtonDown(0))
+        //{
+        //    electricityManager.FinishedMiniGame = true;
+        //    //canvas.SetActive(true);
+        //    //clip1.Play();
+        //}
     }
 }

@@ -13,6 +13,9 @@ public class EndMarker : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        DidWin = true;
+        if (other.GetComponent<ElectricityTest>())
+        {
+            DidWin = true;
+        }
     }
 }
