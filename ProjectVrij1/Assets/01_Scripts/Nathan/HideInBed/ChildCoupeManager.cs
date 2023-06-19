@@ -32,13 +32,16 @@ public class ChildCoupeManager : MonoBehaviour
             CanvasActive = true;
             cameraManager.CameraBed.SetActive(true);
             drawerManager.Player.SetActive(false);
+            playerInputManager.uiInput.inBed = true;
+
         }
 
-        if(playerInputManager.InBed == false)
+        if (playerInputManager.InBed == false)
         {
             CanvasActive = false;
             drawerManager.Player.SetActive(true);
             cameraManager.CameraBed.SetActive(false);
+            playerInputManager.uiInput.inBed = false;
         }
 
         if(sceneLoader.LoadThirdScene == true)

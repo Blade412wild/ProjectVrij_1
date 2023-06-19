@@ -11,9 +11,13 @@ public class DoorScript : MonoBehaviour
 	[SerializeField] private GetLockedAndSpam lockAndSpam;
 	[SerializeField] private CinemachineVirtualCamera cinemachineVirtualCamera;
 	[SerializeField] private AudioManager auditman;
+
 	private ThirdPersonController thirdPersonController;
 	private bool isColliding;
 
+	// Nathan heeft dit toegevoegd
+	[SerializeField] private UIInput uiInput;
+	public bool PlayAnimation;
 	public bool DemonAnimationHasBeenPlayed;
 
 	private void Awake()
@@ -37,13 +41,16 @@ public class DoorScript : MonoBehaviour
 
 	void InputTrigger()
 	{
-		if (Input.GetKeyDown(KeyCode.Space) && isColliding)
+		// ik heb dit veranderd naar een bool zodat ik via de player het kan activeren
+		if (PlayAnimation == true)
 		{
 			thirdPersonController.enabled = false;
 			cinemachineVirtualCamera.Follow = null;
 			lockAndSpam.EventDemon();
 			auditman.PlayAudio(1);
-		}
+			uiInput.DemonAnimationIsActive = true;
+
+        }
 	}
 
 	public void EnableEverythingAgain()
@@ -55,6 +62,6 @@ public class DoorScript : MonoBehaviour
 		cinemachineVirtualCamera.Follow = cameraPlacementPlayer.transform;
 		isColliding = false;
         DemonAnimationHasBeenPlayed = true;
-
+        uiInput.DemonAnimationIsActive = false;
     }
 }

@@ -16,10 +16,11 @@ public class VideoStopper : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if ((ulong)clip1.frame >= clip1.frameCount)
+        if(Input.GetKeyUp(KeyCode.F))
         {
             clip1.Stop();
             canvas.SetActive(false);
         }
+
     }
 }

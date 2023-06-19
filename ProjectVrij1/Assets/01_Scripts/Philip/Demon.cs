@@ -25,6 +25,8 @@ public class Demon : MonoBehaviour
 
     [Header("Reference Object")]
     [SerializeField] private GameObject Player;
+    [SerializeField] private UIInput uiInput;
+
     //[SerializeField] private AdultToChildMode adultToChildMode;
 
     private void Awake()
@@ -136,6 +138,8 @@ public class Demon : MonoBehaviour
         Quaternion targetRotation = Quaternion.LookRotation(directionToPlayer);
         NavMeshAgent.transform.rotation = Quaternion.Euler(0, targetRotation.eulerAngles.y, 0);
 
+        // Nathan heeft toegevoegd
+        uiInput.demonAttackStateIsActive = true;
 
         if (distanceToPlayer > ViewDistance * 2)
         {

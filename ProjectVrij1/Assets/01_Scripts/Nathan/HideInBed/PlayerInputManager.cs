@@ -6,6 +6,7 @@ public class PlayerInputManager : MonoBehaviour
 {
     public bool InBed;
     public bool SpacebarBed;
+    public UIInput uiInput;
     // Start is called before the first frame update
 
     void Start()
@@ -42,7 +43,7 @@ public class PlayerInputManager : MonoBehaviour
                 InBed = false;
             }
 
-            if (Physics.Raycast(ray, out hit))
+            if (Physics.Raycast(ray, out hit, 2.0f))
             {
                 if (hit.transform.GetComponent<DrawerMechanic>() != null)
                 {
@@ -64,6 +65,14 @@ public class PlayerInputManager : MonoBehaviour
                         InBed = true;
                     }
 
+                }
+                if (hit.transform.GetComponent<DoorScript>())
+                {
+                    var selection = hit.transform;
+                    Debug.Log(selection.ToString());
+                    var selectionItem = selection.GetComponent<DoorScript>();
+                    selectionItem.PlayAnimation = true;
+                    uiInput.DemonAnimationIsActive = true;
                 }
 
 

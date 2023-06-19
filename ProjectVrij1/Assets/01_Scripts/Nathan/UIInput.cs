@@ -7,7 +7,11 @@ public class UIInput : MonoBehaviour
 {
     public GameObject F;
     public GameObject Spacebar;
-    public bool DemonAnimation; 
+    public GameObject SmashSpacebar;
+
+    public bool DemonAnimationIsActive; 
+    public bool demonAttackStateIsActive;
+    public bool inBed;
     // Start is called before the first frame update
     void Start()
     {
@@ -52,9 +56,23 @@ public class UIInput : MonoBehaviour
             F.SetActive(false);
         }
 
-        if(DemonAnimation == true)
+        if(DemonAnimationIsActive == true)
         {
-            Spacebar.SetActive (true);
+            SmashSpacebar.SetActive (true);
+        }
+        else if(demonAttackStateIsActive == true)
+        {
+            SmashSpacebar.SetActive(true);
+        }
+        else if (inBed == true)
+        {
+            Spacebar.SetActive(true);
+        }
+        else
+        {
+            SmashSpacebar.SetActive(false);
+            Spacebar.SetActive(false);
+
         }
     }
 }
