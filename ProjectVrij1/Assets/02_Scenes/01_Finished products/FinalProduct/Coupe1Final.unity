@@ -5744,7 +5744,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1200351622}
   - component: {fileID: 1200351621}
-  - component: {fileID: 1200351623}
   m_Layer: 0
   m_Name: Volume
   m_TagString: Untagged
@@ -5784,27 +5783,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &1200351623
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1200351620}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 95cc49d52b159854b9b12eb2d798ba3d, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1209604923
 GameObject:
   m_ObjectHideFlags: 0
@@ -6048,7 +6026,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh37024
+  m_Name: pb_Mesh37842
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
