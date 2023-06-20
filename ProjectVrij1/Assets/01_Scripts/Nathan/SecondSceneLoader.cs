@@ -33,7 +33,7 @@ public class SecondSceneLoader : MonoBehaviour
                 }
             }
 
-            if (hit.transform.GetComponent<DoorScript>() != null && doorSCript.DemonAnimationHasBeenPlayed == true)
+            if (hit.transform.GetComponent<DoorScript>() != null && doorSCript.AnimationHasBeenPlayed == true)
             {
                 SceneManager.LoadScene("ChildCoupe");
 

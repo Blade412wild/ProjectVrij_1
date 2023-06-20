@@ -12,16 +12,18 @@ public class DoorScript : MonoBehaviour
     [SerializeField] private CinemachineVirtualCamera cinemachineVirtualCamera;
     [SerializeField] private AudioManager auditman;
     private ThirdPersonController thirdPersonController;
-    public bool DemonAnimationHasBeenPlayed;
+    public bool DemonAnimationIsPlaying;
+ 
 
     // Nathan heeft dit toegevoegd
     [SerializeField] private UIInput uiInput;
     public bool PlayAnimation;
+    public bool AnimationHasBeenPlayed;
 
     private void Awake()
     {
         auditman.PlayAudio(0);
-        DemonAnimationHasBeenPlayed = false;
+        DemonAnimationIsPlaying = false;
         thirdPersonController = playerObj.GetComponent<ThirdPersonController>();
         thirdPersonController.enabled = true;
     }
@@ -33,9 +35,9 @@ public class DoorScript : MonoBehaviour
 
     void InputTrigger()
     {
-        if (PlayAnimation == true && !DemonAnimationHasBeenPlayed)
+        if (PlayAnimation == true && !DemonAnimationIsPlaying)
         {
-            DemonAnimationHasBeenPlayed = true;
+            DemonAnimationIsPlaying = true;
             thirdPersonController.enabled = false;
             cinemachineVirtualCamera.Follow = null;
             lockAndSpam.EventDemon();
@@ -45,6 +47,7 @@ public class DoorScript : MonoBehaviour
 
     public void EnableEverythingAgain()
     {
+        AnimationHasBeenPlayed = true;
         auditman.PlayAudio(0);
         CinemachineBasicMultiChannelPerlin noise = cinemachineVirtualCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
         noise.m_FrequencyGain = 0.5f;
