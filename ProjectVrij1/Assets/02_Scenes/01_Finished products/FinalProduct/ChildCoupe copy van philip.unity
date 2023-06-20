@@ -1496,8 +1496,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 267205378c5c45441afb337376280e71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dayDuration: 10
-  nightDuration: 5
+  dayDuration: 20
+  nightDuration: 40
   dayNightCycle: {fileID: 1559997121}
   audioManager: {fileID: 850381718}
 --- !u!1 &443751764
@@ -5165,7 +5165,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1851803734
 MonoBehaviour:
   m_ObjectHideFlags: 0
