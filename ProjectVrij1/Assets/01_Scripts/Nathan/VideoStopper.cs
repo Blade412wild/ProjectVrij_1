@@ -7,6 +7,9 @@ public class VideoStopper : MonoBehaviour
 {
     public VideoPlayer clip1;
     public GameObject canvas;
+    public GameObject RedDot;
+
+    private bool IntroHasbeenPlayed;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,10 +19,12 @@ public class VideoStopper : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyUp(KeyCode.F))
+        if(Input.GetKeyDown(KeyCode.F) && IntroHasbeenPlayed == false)
         {
+            IntroHasbeenPlayed = true;  
             clip1.Stop();
             canvas.SetActive(false);
+            RedDot.SetActive(true);
         }
 
     }

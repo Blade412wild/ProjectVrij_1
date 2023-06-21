@@ -4269,7 +4269,7 @@ VideoPlayer:
   m_PlayOnAwake: 1
   m_SkipOnDrop: 0
   m_Looping: 0
-  m_WaitForFirstFrame: 0
+  m_WaitForFirstFrame: 1
   m_FrameReadyEventEnabled: 0
   m_VideoShaders: []
 --- !u!4 &807744447
@@ -4301,6 +4301,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clip1: {fileID: 807744446}
   canvas: {fileID: 1156492840}
+  RedDot: {fileID: 873978340}
 --- !u!1 &810777565
 GameObject:
   m_ObjectHideFlags: 0
@@ -4590,7 +4591,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &873978341
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4608,8 +4609,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 14.0595, y: 14.0595}
+  m_AnchoredPosition: {x: 0.000012636, y: 0.000012636}
+  m_SizeDelta: {x: 8.2914, y: 8.2914}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &873978342
 MonoBehaviour:
@@ -6050,7 +6051,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh53416
+  m_Name: pb_Mesh115284
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -21187,9 +21188,10 @@ MonoBehaviour:
   lockAndSpam: {fileID: 201984316}
   cinemachineVirtualCamera: {fileID: 596754306}
   auditman: {fileID: 212995504}
-  DemonAnimationHasBeenPlayed: 0
+  DemonAnimationIsPlaying: 0
   uiInput: {fileID: 1821696600}
   PlayAnimation: 0
+  AnimationHasBeenPlayed: 0
 --- !u!65 &6784610532084842983
 BoxCollider:
   m_ObjectHideFlags: 0
