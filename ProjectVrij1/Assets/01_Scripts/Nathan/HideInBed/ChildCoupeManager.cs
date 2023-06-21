@@ -10,9 +10,9 @@ public class ChildCoupeManager : MonoBehaviour
     public CameraManager cameraManager;
     public PlayerInputManager playerInputManager;
     public LevelBoundary levelBoundary;
+    public DayNightCycle dayNightCycle;
 
     [Header("miscellaneous")]
-    public bool IsDay;
     public SceneLoader sceneLoader;
     public bool CanvasActive;
 
@@ -47,5 +47,16 @@ public class ChildCoupeManager : MonoBehaviour
         {
             SceneManager.LoadScene("ElectricityGame");
         }
+
+        if(dayNightCycle.DayOrNight == true)
+        {
+            drawerManager.DayTime = true;
+        }
+        else if (dayNightCycle.DayOrNight == false)
+        {
+            drawerManager.DayTime = false;
+        }
+
+
     }
 }
