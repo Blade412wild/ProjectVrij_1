@@ -48,6 +48,11 @@ public class UIInput : MonoBehaviour
                 Debug.Log("door");
                 F.SetActive(true);
             }
+            else if (hit.transform.GetComponent<Lamp>() != null)
+            {
+                Debug.Log("door");
+                F.SetActive(true);
+            }
 
 
         }
