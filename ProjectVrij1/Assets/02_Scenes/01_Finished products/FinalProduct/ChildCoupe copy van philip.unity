@@ -2364,6 +2364,7 @@ MonoBehaviour:
   drawerManager: {fileID: 801430411}
   cameraManager: {fileID: 1615408618}
   playerInputManager: {fileID: 1798638772}
+  levelBoundary: {fileID: 804774541722593951}
   IsDay: 0
   sceneLoader: {fileID: 443751765}
   CanvasActive: 0
@@ -6918,9 +6919,19 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 74628bd37b580614ebad051beb3fbd6a, type: 2}
     - target: {fileID: 6441526249030118006, guid: 8a792638d95827f4c84e58eca8a46e67,
         type: 3}
+      propertyPath: Speed
+      value: 3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6441526249030118006, guid: 8a792638d95827f4c84e58eca8a46e67,
+        type: 3}
       propertyPath: managerDrawer
       value: 
       objectReference: {fileID: 801430411}
+    - target: {fileID: 6441526249030118006, guid: 8a792638d95827f4c84e58eca8a46e67,
+        type: 3}
+      propertyPath: BoxActivationDistance
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6441526249030118007, guid: 8a792638d95827f4c84e58eca8a46e67,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -7146,7 +7157,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh193844
+  m_Name: pb_Mesh210992
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -7612,7 +7623,7 @@ MonoBehaviour:
   Blakets: {fileID: 1428823461}
   maxPosY: 580
   Speed: 300
-  SafDistance: 200
+  SafDistance: 400
   PlayerSafeSatus: 0
 --- !u!135 &1732196605
 SphereCollider:
@@ -7781,6 +7792,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   InBed: 0
   SpacebarBed: 0
+  Lamp: 0
   uiInput: {fileID: 954803256}
 --- !u!4 &1798638773
 Transform:
