@@ -8,8 +8,7 @@ public class ElectricityTest : MonoBehaviour
     public float SpeedY = -4.0f;
     public float SpeedX = 1.0f;
     public  float BeginSpeed;
-    public AudioSource electricitySound;
-
+    [SerializeField] private AudioSource auditman;
 
     public  bool BeginState;
     private Vector3 playerPos;
@@ -30,6 +29,14 @@ public class ElectricityTest : MonoBehaviour
     }
     private void ElectricityMovement()
     {
+        if (playerPos.x < 0 || playerPos.x > 13)
+		{
+            auditman.enabled = false;
+		} else
+		{
+            auditman.enabled = true;
+		}
+
         if (BeginState)
         {
             if (Input.GetKeyDown(KeyCode.Space))
@@ -62,7 +69,6 @@ public class ElectricityTest : MonoBehaviour
             }
         }
     }
-
 }
 
 
