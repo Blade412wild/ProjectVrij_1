@@ -35,7 +35,15 @@ public class SecondSceneLoader : MonoBehaviour
 
             if (hit.transform.GetComponent<DoorScript>() != null && doorSCript.AnimationHasBeenPlayed == true)
             {
-                SceneManager.LoadScene("ChildCoupe");
+                //SceneManager.LoadScene("ChildCoupe");
+                SceneManager.LoadScene("ChildCoupe copy van philip");
+
+            }
+
+            if (hit.transform.GetComponent<Lamp>() != null && doorSCript.AnimationHasBeenPlayed == true)
+            {
+                //SceneManager.LoadScene("ChildCoupe");
+                SceneManager.LoadScene("ElectricityGame");
 
             }
         }

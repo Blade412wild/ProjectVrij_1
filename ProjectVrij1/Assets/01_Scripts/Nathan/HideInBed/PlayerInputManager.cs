@@ -6,6 +6,7 @@ public class PlayerInputManager : MonoBehaviour
 {
     public bool InBed;
     public bool SpacebarBed;
+    public bool Lamp;
     public UIInput uiInput;
     // Start is called before the first frame update
 
@@ -74,6 +75,10 @@ public class PlayerInputManager : MonoBehaviour
                     selectionItem.PlayAnimation = true;
                     uiInput.DemonAnimationIsActive = true;
                 }
+                if (hit.transform.GetComponent<Lamp>())
+                {
+                    Lamp = true;
+                }
 
 
 
@@ -83,6 +88,11 @@ public class PlayerInputManager : MonoBehaviour
             //{
             //    InBed = false;
             //}
+
+        }
+        if (Input.GetKeyUp(KeyCode.F))
+        {
+            Lamp = false;
 
         }
     }

@@ -9,6 +9,7 @@ public class ChildCoupeManager : MonoBehaviour
     public ManagerDrawer drawerManager;
     public CameraManager cameraManager;
     public PlayerInputManager playerInputManager;
+    public LevelBoundary levelBoundary;
 
     [Header("miscellaneous")]
     public bool IsDay;
@@ -42,7 +43,7 @@ public class ChildCoupeManager : MonoBehaviour
             playerInputManager.uiInput.inBed = false;
         }
 
-        if(sceneLoader.LoadThirdScene == true)
+        if(playerInputManager.Lamp == true && levelBoundary.OnTheDrawer == true)
         {
             SceneManager.LoadScene("ElectricityGame");
         }
