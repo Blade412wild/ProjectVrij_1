@@ -6,21 +6,15 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/02_Scenes/01_Finished products/FinalProduct/ChildCoupe.unity
-    guid: 407a94a92afc35c40baa369e3ff91e83
-  - enabled: 1
-    path: Assets/02_Scenes/philip/Day Night Cycle.unity
-    guid: dad777b112bf42847b1724b5761386f7
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
-  - enabled: 1
-    path: Assets/02_Scenes/01_Finished products/FinalProduct/ElectricityGame.unity
-    guid: 5cb9223dbea649e40a894a01c76784b5
+    path: Assets/02_Scenes/01_Finished products/FinalProduct/Coupe1Final.unity
+    guid: a9dad4d3260a43445b815fdb118a55c3
   - enabled: 1
     path: Assets/02_Scenes/01_Finished products/FinalProduct/ChildCoupe copy van
       philip.unity
     guid: dda7155733f17bc41a7d121461421b77
+  - enabled: 1
+    path: Assets/02_Scenes/01_Finished products/FinalProduct/ElectricityGame.unity
+    guid: 5cb9223dbea649e40a894a01c76784b5
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 9e7be553448fa2546aea5752021cbcf7,
       type: 2}

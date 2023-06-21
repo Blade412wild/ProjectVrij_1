@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class DayNightTimer : MonoBehaviour
 {
-    [SerializeField] private float dayDuration = 10f;
+    [SerializeField] private float dayDuration = 20f;
     [SerializeField] private float nightDuration = 5f;
     [SerializeField] private DayNightCycle dayNightCycle;
     [SerializeField] private AudioManager audioManager;

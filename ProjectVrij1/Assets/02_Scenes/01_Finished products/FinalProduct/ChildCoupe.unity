@@ -489,7 +489,8 @@ MonoBehaviour:
   drawerManager: {fileID: 801430411}
   cameraManager: {fileID: 1615408618}
   playerInputManager: {fileID: 1798638772}
-  IsDay: 0
+  levelBoundary: {fileID: 0}
+  dayNightCycle: {fileID: 0}
   sceneLoader: {fileID: 443751765}
   CanvasActive: 0
 --- !u!4 &163893532
@@ -4770,6 +4771,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   InBed: 0
   SpacebarBed: 0
+  Lamp: 0
   uiInput: {fileID: 289588378}
 --- !u!4 &1798638773
 Transform:
