@@ -5,6 +5,7 @@ using UnityEngine;
 public class ElectricityManager : MonoBehaviour
 {
     [Header("miscellaneous")]
+    [SerializeField] private GameObject uiSpaceBar;
     public GameObject ElectricityPrefab;
     public EndMarker endMarker;
     public  bool FinishedMiniGame;
@@ -42,6 +43,7 @@ public class ElectricityManager : MonoBehaviour
         if (endMarker.DidWin == true)
         {
             FinishedMiniGame = true;
+            uiSpaceBar.SetActive(false);
         }
 
 

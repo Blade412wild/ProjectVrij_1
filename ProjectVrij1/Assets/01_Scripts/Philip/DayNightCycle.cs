@@ -7,6 +7,8 @@ public class DayNightCycle : MonoBehaviour
 	[SerializeField] private Animator anim;
 	[SerializeField] private GameObject demon;
 	[SerializeField] private Demon demonScript;
+	[SerializeField] private GameObject lights;
+	[SerializeField] private GameObject lightStand;
 	public bool DayOrNight;
 
 	private void Awake()
@@ -14,7 +16,8 @@ public class DayNightCycle : MonoBehaviour
 		DayOrNight = true;
 		demonScript.enabled = false;
 		demon.SetActive(false);
-
+		lights.SetActive(true);
+		lightStand.SetActive(true);
 	}
 
 	private void Update()
@@ -25,12 +28,16 @@ public class DayNightCycle : MonoBehaviour
 			anim.SetInteger("DNC", 1);
 			demonScript.enabled = false;
 			demon.SetActive(false);
+			lights.SetActive(true);
+			lightStand.SetActive(true);
 		}
 		//night
 		if (!DayOrNight)
 		{
 			anim.SetInteger("DNC", 0);
 			StartCoroutine(ShowDemon());
+			lights.SetActive(false);
+			lightStand.SetActive(false);
 		}
 	}
 
