@@ -15,7 +15,7 @@ public class ManagerDrawer : MonoBehaviour
     public GameObject Slide1;
     public GameObject Slide2;
     public GameObject Slide3;
-    //public GameObject Slide4;
+    public GameObject Slide4;
     //public GameObject Slide5;
 
     [Header("LevelBoundaries")]
@@ -67,6 +67,7 @@ public class ManagerDrawer : MonoBehaviour
             if (Drawer1Mechanic.Speed == 0 && Drawer1Mechanic.Counter > MinCounter)
             {
                 Slide1.SetActive(true);
+                Slide4.SetActive(true);
             }
             if (Drawer2Mechanic.Speed == 0 && Drawer1Mechanic.Counter > MinCounter)
             {
@@ -89,6 +90,7 @@ public class ManagerDrawer : MonoBehaviour
             Slide1.SetActive(false);
             Slide2.SetActive(false);
             Slide3.SetActive(false);
+            Slide4.SetActive(false);
 
 
 

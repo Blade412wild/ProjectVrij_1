@@ -25,7 +25,7 @@ public class UIInput : MonoBehaviour
         var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
 
-        if (Physics.Raycast(ray, out hit, 2.0f))
+        if (Physics.Raycast(ray, out hit, 3.0f))
         {
             if (hit.transform.GetComponent<Item>() != null)
             {

@@ -44,7 +44,7 @@ public class PlayerInputManager : MonoBehaviour
                 InBed = false;
             }
 
-            if (Physics.Raycast(ray, out hit, 2.0f))
+            if (Physics.Raycast(ray, out hit, 3.0f))
             {
                 if (hit.transform.GetComponent<DrawerMechanic>() != null)
                 {
